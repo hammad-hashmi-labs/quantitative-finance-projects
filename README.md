@@ -7,14 +7,17 @@ and statistical methods, built with `NumPy` and `SciPy`.
 
 ### [Portfolio Optimization Engine](./portfolio-optimization)
 A constrained mean-variance (Markowitz) optimizer that solves for the
-minimum-variance and maximum-Sharpe-ratio portfolios across a set of assets
-using `scipy.optimize`. The optimized portfolio improved the Sharpe ratio by
-**53.9%** over an equal-weight baseline (0.431 vs. 0.280).
+minimum-variance and maximum-Sharpe-ratio portfolios using `scipy.optimize`,
+then tests them out-of-sample: weights are fit on a chronological training
+window and judged on held-out data, repeated across 500 simulated paths. The
+result illustrates estimation error in mean-variance optimization: the
+max-Sharpe portfolio's median Sharpe ratio fell from 0.908 in-sample to 0.279
+out-of-sample, and it beat an equal-weight baseline in 45.6% of paths.
 
 ### [Statistical Hypothesis Testing Framework](./hypothesis-testing)
 A two-sample inference pipeline that cross-validates statistical
-significance through three independent methods — Welch's *t*-test, a
-10,000-iteration permutation test, and a bootstrap confidence interval —
+significance through three independent methods: Welch's *t*-test, a
+10,000-iteration permutation test, and a bootstrap confidence interval,
 rather than relying on a single test's assumptions.
 
 ## Notes
